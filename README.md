@@ -9,7 +9,7 @@
 <p align="middle">
   <img src="https://img.shields.io/badge/language-html-red.svg?style=flat-square"/>
   <img src="https://img.shields.io/badge/language-css-blue.svg?style=flat-square"/>
-</p><br>
+</p>
 
 ## Question
 
@@ -34,7 +34,7 @@
 ### HTML/CSS를 활용하여 작성할 때 어떤 관점으로 접근했는지(기술 중심으로 설명)
 • HTML에 대해 다양한 기능들을 알고 있지 않았습니다. 따라서 최소한의 기술로 다양하게 화면을 구성하는 것이 목표였습니다. 최소한의 태그 종류들을 사용하여 화면을 구성하고, CSS를 통해 배경화면 색이나, 글자 색, 크기 등을 조정하여 직관성 있는 이를 구성하는 데 최선을 다했습니다. CSS를 이용할 때는 마음처럼 되지 않는 부분을 수정하는 것이 가장 힘들었습니다. 그럴 때마다 HTML의 구성을 다듬고 구조에 대해 공부하며 진행하였습니다.
 
-
+<br><br>
 ---
 
 ## Result
