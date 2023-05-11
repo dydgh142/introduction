@@ -1,7 +1,10 @@
 /*@@@@@@@@@@@@@@@@@@@@@@@@@ 헤더 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
+html {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -17,12 +20,13 @@ a:focus {
 }
 /* 헤더 모든 부분 */
 .navbar {
+  position: relative;
+  height: 60px;
   display: flex block;
   font-family: "Montserrat", sans-serif;
   justify-content: space;
   align-items: center;
   background-color: white;
-  padding: 8px 12px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -31,12 +35,13 @@ a:focus {
 
 /* strap_m_ */
 .navbar_title {
+  position: absolute;
   font-size: 24px;
   font-weight: bold;
   color: #363738;
-  padding-top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   padding-left: 15%;
-  padding-bottom: 18px;
   line-height: 0.5%;
 }
 .navbar_title i {
@@ -46,129 +51,34 @@ a:focus {
 .navbar_title span:hover {
   color: #363738;
 }
-/* home, insta ..... */
-.navbar_menu {
-  font-size: 17px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  list-style: none;
-  padding: 10%;
-  line-height: 40px;
-  align-items: center;
-  margin: 0;
-}
-
-.navbar_menu li {
-  padding: 8px 12px;
-}
-/* 메뉴 위에 마우스 올라갔을때 */
-.navbar_menu li:hover {
-  color: #6fc754;
-  border-radius: 4px;
-}
-
-/* 햄버거 버튼 */
-.navbar_toggleBtn {
-  display: none;
-  position: absolute;
-  right: 32px;
-  font-size: 24px;
-  color: wheat;
-}
-
-/* @@@@@@@@@@@@@@@@@@@@@ MY story ... hero @@@@@@@@@@@@@@@@@@@ */
-/* 배경 고양이사진  */
-.hero {
-  background: url(img/cat.jpg) no-repeat center / cover;
-  width: 100%;
-  height: 844px;
-
-  display: table;
-  z-index: -1;
-  position: relative;
-  right: 0%;
-  left: 0%;
-  bottom: 100px;
-}
-
-/* 배경 뿌옇게 효과 처리 */
-.overlay {
-  top: 100px;
-  position: absolute;
-}
-.overlay:before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  z-index: 0;
-}
-
-/* 글자 쓰기위한 padding */
-.hero-content {
-  display: table-cell;
-  vertical-align: middle;
-  padding-top: 400px;
-  padding-bottom: 300px;
-}
-
-/* MY story + Your client ....(의 위치설정) */
-.hero-text {
-  max-width: 700px;
-  width: 100%;
-  top: 0;
-  margin: -250px auto;
-
-  padding: 0 15px;
-  text-align: center;
-}
-
-/* my storry (h1의 위치 설정) */
-.hero-text h1 {
-  position: relative;
-  margin-top: 13%;
-  font-size: 62px;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-/* your client ..(p 위치설정) */
-.hero-text p {
-  position: relative;
-  margin-top: 35%;
-  font-size: 40px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 300;
-  color: #535353;
-  line-height: 22px;
-}
-
-/* Learn more 버튼 설정  */
-.hero-text .btn {
-  position: relative;
-  background-color: transparent;
-}
-
-.hero-text .btn:hover {
-  background-color: #26272d;
-  color: #fff;
-}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MAIN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .block {
   display: block;
 }
 
-.site-main {
-  display: block;
+.cat {
   position: relative;
-  top: 845px;
+  margin-top: 60px;
+  height: 50%;
+}
+
+.cat > img {
   width: 100%;
-  height: 3050px;
+  opacity: 0.5;
+}
+
+.cat > h3 {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  line-height: 22px;
+  color: #4a4a4a;
+  font-size: clamp(5vw, 30px, 20vw);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 300;
 }
 
 /* @@@@@@@@@@@@@@@@2번째 단락@@@@@@@@@@@@@@@ */
@@ -188,8 +98,13 @@ a:focus {
   margin-left: 5vw;
 }
 
-.profile > img {
-  height: 100%;
+.profileImg {
+  position: relative;
+  width: 100%;
+}
+.profileImg > img {
+  position: absolute;
+  width: 100%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -227,8 +142,9 @@ a:focus {
 
 .photo-content p {
   font-size: 18px;
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
   color: #202525;
 }
 
@@ -258,8 +174,9 @@ a:focus {
 
 .study-plan p {
   font-size: 17px;
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
   color: #43444b;
 }
@@ -288,8 +205,9 @@ a:focus {
   font-size: 18px;
 
   color: #090a0a;
-  margin-left: 29%;
-  margin-right: 29%;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* @@@@@@@@@@@@@@6번쨰 단락 (경력사항 및 자격증)@@@@@@@@@ */
@@ -305,6 +223,9 @@ a:focus {
 .content2 p {
   padding-top: 15px;
   font-size: 18px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 버튼@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -347,88 +268,19 @@ a:focus {
   color: #fff;
 }
 
-/* 화면 작아졌을때 ex)핸드폰 화면
 @media screen and (max-width: 720px) {
-    .navbar{
-        position: fixed;
-        width: 100%;
-        height: 60px;
-        background-color: #fff;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 24px;
-    }
+  .profile {
+    display: block;
+  }
 
-    .navbar_title{
-        position: absolute;
-        top: 15px;
-        left: 35px;
-        padding: 0 0;
-        font-size: 22px;
-    }
+  .profileImg {
+    display: block;
+    width: 50%;
+    height: 35vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .navbar_menu{
-        display: none;
-        flex-direction: column;
-        padding: 0 0;
-        position: absolute;
-        right: 1%;
-        top: 30px
-    }
-
-    .navbar_menu a{
-        display: block;
-    }
-    
-
-    .navbar_toggleBtn{
-        display: block;
-    }
-
-    /* 햄버거 눌렀을때 나오는 메뉴 창 */
-/* .navbar_menu.active{
-        display: flex;
-        background-color: #fff;
-        margin-top: 20px;
-        border-radius: 12px;
-        border: 2px solid wheat;
-        
-    }
-
-    /* 고양이 부분  */
-/* .hero-text h1 {
-        font-size: 120%;
-        font-family: inherit;
-        font-weight: 500;
-        
-        line-height: 1.1;
-        max-width: 400px;
-        margin: 100px auto;
-
-    }
-
-    .hero-text p{
-        font-size: 40%;
-        max-width: 70%;
-        margin: 70px auto 30px;
-    }
-
-    .hero-text .btn{
-        width: 140px;
-        height: 37px;
-        line-height: 2;
-        top: -10px;
-    } */
-
-/* 두번쨰 단락 */
-/* .not h3{
-        font-size: 1.5rem;
-       
-    }
-    
-    .not p2{
-        font-size: 80%;
-    }
-    
-
-}   */
+  .profileExplain {
+  }
+}
